@@ -1,4 +1,4 @@
-import 'package:mini_project/products/category_wise.dart';
+import 'package:mini_project/products/products_list.dart';
 
 class Cart {
   final product;

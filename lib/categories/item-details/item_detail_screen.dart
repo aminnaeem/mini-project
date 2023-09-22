@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_project/constants/colors.dart';
+import 'package:mini_project/products/products_list.dart';
 import 'package:mini_project/widgets/add_to_cart_btn.dart';
 import 'package:mini_project/widgets/buy_now_btn.dart';
-import 'package:mini_project/widgets/cart_counter.dart';
 import 'package:mini_project/widgets/counter_with_favbtn.dart';
 import 'package:mini_project/widgets/custom_topbar.dart';
 import 'package:mini_project/widgets/product_description.dart';
@@ -11,14 +10,16 @@ import 'package:mini_project/widgets/product_rating.dart';
 import 'package:mini_project/widgets/product_title_img.dart';
 
 class ItemDetailsScreen extends StatelessWidget {
-  final product;
+  final Product product;
 
-  const ItemDetailsScreen({super.key, this.product});
+  const ItemDetailsScreen({super.key, required this.product});
+  
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: product.color,
       body: SafeArea(
         child: Column(
           children: [
@@ -56,7 +57,7 @@ class ItemDetailsScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      ProductTitleWithImage()
+                      ProductTitleWithImage(product: product)
                     ],
                   ),
                 )

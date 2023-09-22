@@ -3,7 +3,6 @@ import 'package:mini_project/categories/category_cards.dart';
 import 'package:mini_project/categories/products_page.dart';
 import 'package:mini_project/constants/colors.dart';
 import 'package:mini_project/home/dashboard/dashboard_styling.dart';
-import 'package:mini_project/products/product_images.dart';
 import 'package:mini_project/widgets/buttons.dart';
 
 class CategoriesView extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mini_project/constants/colors.dart';
 import 'package:mini_project/constants/icons.dart';
-import 'package:mini_project/products/category_wise.dart';
+import 'package:mini_project/products/products_list.dart';
 import 'package:mini_project/widgets/buttons.dart';
 
 class CustomTopBar extends StatelessWidget {

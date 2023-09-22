@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/constants/colors.dart';
+import 'package:mini_project/products/products_list.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
+  final Product product;
   const ProductTitleWithImage({
-    super.key,
+    super.key, required this.product,
   });
 
   @override
@@ -19,7 +21,7 @@ class ProductTitleWithImage extends StatelessWidget {
             ),
           ),
           Text(
-            "Office Code",
+            "${product.title}",
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               color: AppColors.blackShade001,
               fontWeight: FontWeight.bold
@@ -34,7 +36,7 @@ class ProductTitleWithImage extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(text: "Price\n"),
-                    TextSpan(text: "\$320",
+                    TextSpan(text: "Rs. ${product.price}",
                       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         color: AppColors.blackShade001,
                         fontWeight: FontWeight.bold
@@ -47,7 +49,7 @@ class ProductTitleWithImage extends StatelessWidget {
                 width: 24,
               ),
               Expanded(
-                child: Image.asset("assets/images/products/categories/oilGhee.png",
+                child: Image.asset(product.image,
                   fit: BoxFit.fill,
                 ),
               )

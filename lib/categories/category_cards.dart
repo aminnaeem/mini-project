@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project/constants/colors.dart';
-import 'package:mini_project/products/category_wise.dart';
+import 'package:mini_project/products/categories_list.dart';
+import 'package:mini_project/products/products_list.dart';
 
 class CategoryCards extends StatelessWidget {
   const CategoryCards({super.key});
@@ -16,8 +17,7 @@ class CategoryCards extends StatelessWidget {
       ),
       itemCount: CategoriesList.length,
       itemBuilder: ((context, index) {
-        final fruit = CategoriesList[index]["Category Image"];
-        final imagePath = fruit;
+        final imagePath = categories[index].image;
         return Container(
           margin: EdgeInsets.all(14),
           height: 164,

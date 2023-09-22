@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project/constants/colors.dart';
+import 'package:mini_project/products/products_list.dart';
 import 'package:mini_project/widgets/buttons.dart';
 
 class ItemCard extends StatelessWidget {
-  final product;
+  final Product product;
   final void Function()? press;
   const ItemCard({
-    super.key, this.product, required this.press,
+    super.key, required this.product, required this.press,
   });
 
   @override
@@ -15,7 +15,7 @@ class ItemCard extends StatelessWidget {
       onTap: press,
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.blackShade01,
+          color: product.color,
           borderRadius: BorderRadius.circular(12)
         ),
         child: Column(
@@ -23,14 +23,17 @@ class ItemCard extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
+                width: 180,
                 child: Stack(
                   alignment: Alignment.bottomRight,
                   children: [
                     Container(
-                      child: Image.asset('assets/images/products/categories/chickenMeat.png'),
+                      alignment: Alignment.center,
+                      child: Image.asset(product.image),
                       padding: EdgeInsets.all(20),  
                     ),
                     Container(
+                      alignment: Alignment.bottomRight,
                       child: AddToCartPlusButton(),
                       padding: EdgeInsets.only(right: 15)
                     )
@@ -40,7 +43,7 @@ class ItemCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20, left: 20),
-              child: Text("Rs. 500",
+              child: Text("Rs. ${product.price}",
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14
@@ -48,8 +51,8 @@ class ItemCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20, left: 20),
-              child: Text("Meat",
+              padding: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              child: Text("${product.title}",
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 12
